@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: echo a string 
         run: echo "Hello World"
-      - name: multiline run-shell-commands
+      - name: skip ci
         run: echo "Skip CI"
   
