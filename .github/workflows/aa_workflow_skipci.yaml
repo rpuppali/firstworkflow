@@ -18,10 +18,10 @@ jobs:
     steps:
       - name: Display working directory and list files
         run: |
-          pwd
-          ls -al
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
+          Get-Location
+          dir
+          echo $env:GITHUB_SHA
+          echo $env:GITHUB_REPOSITORY
+          echo $env:GITHUB_WORKSPACE
 
   
