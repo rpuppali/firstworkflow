@@ -1,12 +1,17 @@
-name : first_workflow1
+name : aa_workflow5 
+
 on: [push]
 
-jobs: 
-  run-shell-commands:
-    runs-on: ubuntu-latest
+jobs:
+  display_windows_info:
+    runs-on: windows-latest
     steps:
-      - name: echo a string 
-        run: echo "Hello World"
-      - name: skip ci
-        run: echo "Skip CI"
+      - name: Display working directory and list files
+        run: |
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+
   
