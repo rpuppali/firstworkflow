@@ -6,4 +6,4 @@ jobs:
         runs-on: ubuntu_latest
         steps:
             - name: Setting an error message
-              run: echo "::error::Missing semi colon"
+              run: echo "Missing semi colon"
