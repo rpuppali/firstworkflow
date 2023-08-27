@@ -6,7 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Display the path
+        id: greet
         uses: actions/hello-world-javascript-action@v1.1
         with:
           who-to-greet: 'Raghav'
+      - name: DisplayGreetingTime
+        run: echo "${{steps.greet.outputs.time}}"
 
