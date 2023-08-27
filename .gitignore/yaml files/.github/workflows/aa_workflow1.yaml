@@ -1,0 +1,13 @@
+name: runSimpleCommands
+on: [push]
+
+jobs:
+  DisplayHelloWorld:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello world
+        run: echo "hello world"
+      - name: multiline statements
+        run: |
+          node -v
+          npm -v

@@ -1,17 +1,8 @@
 name : Running_simple_shell_commands
 on: [push]
 
-jobs: 
-  run-shell-commands:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo a string 
-        run: echo "Hello World"
-      - name: multiline run-shell-commands
-        run: |
-          node -v 
-          npm -v
-  parallel-job-macos:
+jobs:
+  parallelJobOnMacos:
     runs-on: macos-latest
     steps:
         - name: view sw version
