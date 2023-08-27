@@ -19,7 +19,7 @@ jobs:
           echo $GITHUB_WORKSPACE
   display_windows_info:
     runs-on: windows-latest
-  defaults:
+    defaults:
       run:
         shell: pwsh
     steps:
