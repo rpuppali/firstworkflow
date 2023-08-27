@@ -1,0 +1,21 @@
+name: changeDirectory
+on: [push]
+
+jobs:
+  DisplayHelloWorld:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello world
+        run: echo "hello world"
+      - name: multiline statements
+        run: |
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+      - name: change in working directory
+        working-directory: /home/runner
+        run: |
+            pwd
+            echo $GITHUB_WORKSPACE
