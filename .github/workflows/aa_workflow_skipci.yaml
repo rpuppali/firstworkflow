@@ -1,4 +1,4 @@
-name: run-simple-commands
+name: runSimpleCommands
 on: [push]
 
 jobs:
