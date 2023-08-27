@@ -9,6 +9,6 @@ jobs:
       run: |
           echo $GITHUB_SHA
           echo $GITHUB_REF
- 
-
+# GITHUB_SHA - Last git commit id 
+# GITHUB_SHA - Last git commit id 
       
