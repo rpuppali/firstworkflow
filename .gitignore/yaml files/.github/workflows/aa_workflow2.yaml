@@ -7,10 +7,6 @@ jobs:
         steps:
           - name: say hello world
             run: echo "hello world"
-          - name: multiline statements
-            run: |
-              node -v
-              npm -v
 # if first job fails second job doesnt execute
         # - name: error
         #   run: error

@@ -1,8 +1,8 @@
-name: runSimpleCommands
+name: runSimpleshellCommands
 on: [push]
 
 jobs:
-  DisplayHelloWorld:
+  DisplayHelloWorldAndMultilineCommands:
     runs-on: ubuntu-latest
     steps:
       - name: say hello world
