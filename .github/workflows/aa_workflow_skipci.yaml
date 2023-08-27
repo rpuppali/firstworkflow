@@ -5,12 +5,12 @@ defaults:
     shell: bash
 
 jobs:
-  runonubunntu:
+  runOnbashShell:
     runs-on: ubuntu-latest
     steps:
       - name: SayHelloWorld
         run: echo "Hello World"
-  runonwindows:
+  runOnpwshShell:
     runs-on: windows-latest
     defaults:
       run:
