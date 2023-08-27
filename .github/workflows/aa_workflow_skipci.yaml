@@ -10,6 +10,7 @@ jobs:
     steps:
       - name: Display the path
         run: echo $PATH
+  
   runOnpwshShell:
     runs-on: windows-latest
     steps:
@@ -24,5 +25,18 @@ jobs:
         run: |
           import os
           print(os.environ['PATH']) 
-   
+  
+  runpythonShell:
+    runs-on: windows-latest
+    defaults:
+      run: 
+        shell: python
+    steps:
+      - name: runWindowsCommand
+        run: write-output ${env:PATH}
+      - name: runLinuxCommand
+        run: echo $PATH
+  
+
+
   
