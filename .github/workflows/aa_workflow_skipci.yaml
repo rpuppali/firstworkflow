@@ -1,4 +1,4 @@
-name: runSimpleCommands
+name: changeDirectory
 on: [push]
 
 jobs:
@@ -14,3 +14,8 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
+      - name: change in working directory
+        working-directory: /home/runner
+        run: |
+            pwd
+            echo $GITHUB_WORKSPACE
