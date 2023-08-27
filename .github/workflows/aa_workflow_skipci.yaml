@@ -17,6 +17,9 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
+      - name: Change in working directory
+        working-directory: /home/runner/
+        run: pwd
   display_windows_info:
     runs-on: windows-latest
 # shell can mentioned at jobs level
@@ -37,3 +40,4 @@ jobs:
         run : |
           import platform
           print (platform.processor())
+
