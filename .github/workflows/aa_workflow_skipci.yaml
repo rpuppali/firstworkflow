@@ -1,17 +1,19 @@
-name: changeInDirectory
+name: changeInShell
 on: [push]
 
 jobs:
-  changeInDirectory:
+  runonubunntu:
     runs-on: ubuntu-latest
     steps:
       - name: currentDirectory
         run: |
           pwd
           ls -al
-      - name: changeInWorkingDirectory
-        working-directory: /home/runner
+  runonwindows:
+    runs-on: windows-latest
+    steps:
+      - name: currentDirectory
         run: |
-            pwd
-            ls -al
-            
+          pwd
+          ls -al
+      

@@ -14,7 +14,8 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-      - name: change in working directory
+      - name: change in working director
+#change in directory is possible using working direcotry 
         working-directory: /home/runner
         run: |
             pwd
