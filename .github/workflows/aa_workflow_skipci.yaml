@@ -32,8 +32,10 @@ jobs:
       run: 
         shell: python
     steps:
-      - name: runpythonCommand
-        run: print(os.environ['PATH'])
+      - name: runpythoCommand
+        run: |
+          import os
+          print(os.environ['PATH'])
       - name: runLinuxCommand
         run: echo $PATH
   
