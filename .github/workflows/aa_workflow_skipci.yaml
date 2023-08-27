@@ -1,5 +1,8 @@
 name: changeInShell
 on: [push]
+defaults:
+  run:
+    shell: bash
 
 jobs:
   runonubunntu:
@@ -11,6 +14,9 @@ jobs:
           ls -al
   runonwindows:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
     steps:
       - name: currentDirectory
         run: |
