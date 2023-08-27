@@ -36,8 +36,6 @@ jobs:
         run: |
           import os
           print(os.environ['PATH'])
-      - name: runLinuxCommand
-        run: echo $PATH
   
 
 
