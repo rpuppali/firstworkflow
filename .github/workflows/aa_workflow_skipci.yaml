@@ -8,19 +8,21 @@ jobs:
   runOnbashShell:
     runs-on: ubuntu-latest
     steps:
-      - name: SayHelloWorld
-        run: echo "Hello World"
+      - name: Display the path
+        run: echo $PATH
   runOnpwshShell:
     runs-on: windows-latest
-    defaults:
-      run:
-        shell: pwsh
     steps:
-      - name: currentDirectory
-        run: |
-          write-output "Hello World"
+      - name: Display the path using pwsh
+        run: write-output ${env:PATH}
+        shell: powershell
+      - name: Display the path
+        run: echo %PATH%
+        shell: cmd
       - name: run python scripts
         shell: python
         run: |
           import os
           print(os.environ['PATH']) 
+    runOnpython  
+  
