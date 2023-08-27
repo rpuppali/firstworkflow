@@ -8,10 +8,8 @@ jobs:
   runonubunntu:
     runs-on: ubuntu-latest
     steps:
-      - name: currentDirectory
-        run: |
-          pwd
-          ls -al
+      - name: SayHelloWorld
+        run: echo "Hello World"
   runonwindows:
     runs-on: windows-latest
     defaults:
@@ -20,6 +18,5 @@ jobs:
     steps:
       - name: currentDirectory
         run: |
-          pwd
-          ls -al
+          write-output "Hello World"
       
