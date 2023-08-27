@@ -1,0 +1,15 @@
+name: UsageOfcheckoutAction
+on: [push]
+
+jobs:
+  UsageOfcheckoutAction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: files before checkout
+        run: ls -l
+      - name: Check out action
+        id: Checkout
+        uses: actions/checkout@v3
+      - name: files after checkout
+        run: ls -l
+
