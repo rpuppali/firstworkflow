@@ -1,4 +1,4 @@
-name : first_workflow1
+name : Running_simple_shell_commands
 on: [push]
 
 jobs: 

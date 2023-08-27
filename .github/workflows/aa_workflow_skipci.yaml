@@ -1,45 +1,14 @@
-name : aa_workflow5_running on different shells 
-
+name: running_simple_shell_commands
 on: [push]
-# shell can be mentioned at workflow level 
-defaults:
-  run: 
-    shell: bash
 
 jobs:
-  display_linux_info:
-    runs-on: ubuntu-latest
+  run-multiline-shell-commands:
+    runs-on: ubuntu_latest
     steps:
-      - name: Display working directory and list files
+      - name: dispaly hello world
+        run: echo "Hello World"
+      - name: multiline shell commands
         run: |
-          pwd
-          ls -al
-          echo $GITHUB_SHA
-          echo $GITHUB_REPOSITORY
-          echo $GITHUB_WORKSPACE
-          echo $GITHUB_ACTOR
-# Change in working directory
-      - name: Change in working directory
-        working-directory: /home/runner/
-        run: pwd
-  display_windows_info:
-    runs-on: windows-latest
-# shell can mentioned at jobs level
-    defaults:
-      run:
-        shell: pwsh
-    steps:
-      - name: Display working directory and list files
-        run: |
-          Get-Location
-          dir
-          echo $env:GITHUB_SHA
-          echo $env:GITHUB_REPOSITORY
-          echo $env:GITHUB_WORKSPACE
-# shell can be mentioned at steps level
-      - name: running python shell
-        shell: python
-        run : |
-          import platform
-          print (platform.processor())
-
+         node -v
+         npm -v
+         
