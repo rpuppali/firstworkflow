@@ -8,8 +8,10 @@ jobs:
       - name: currentDirectory
         run: |
           pwd
+          ls -al
       - name: changeInWorkingDirectory
         working-directory: /home/runner
         run: |
             pwd
+            ls -al
             
