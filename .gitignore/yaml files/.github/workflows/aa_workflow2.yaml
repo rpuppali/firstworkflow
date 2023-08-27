@@ -1,4 +1,4 @@
-name : RunningJobAfteranotherjob
+name : Runningdependantjob
 on: [push]
 
 jobs:

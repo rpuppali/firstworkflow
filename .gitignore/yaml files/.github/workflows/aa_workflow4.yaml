@@ -1,17 +1,43 @@
 name: changeInShell
 on: [push]
+# setting default shell to bash. bash for linux
+defaults:
+  run:
+    shell: bash
 
 jobs:
-  changeInDirectory:
+  runOnbashShell:
     runs-on: ubuntu-latest
     steps:
-      - name: currentDirectory
+      - name: Display the path
+        run: echo $PATH
+# step level shell overrides default shell
+  runOnpwshShell:
+    runs-on: windows-latest
+    steps:
+      - name: Display the path using pwsh
+        run: write-output ${env:PATH}
+        shell: pwsh
+      - name: Display the path
+        run: echo %PATH%
+        shell: cmd
+      - name: run python scripts
+        shell: python
         run: |
-          pwd
-          ls -al
-      - name: changeInWorkingDirectory
-        working-directory: /home/runner
+          import os
+          print(os.environ['PATH']) 
+  
+  runpythonShell:
+    runs-on: windows-latest
+    defaults:
+      run: 
+        shell: python
+    steps:
+      - name: runpythoCommand
         run: |
-            pwd
-            ls -al
-            
+          import os
+          print(os.environ['PATH'])
+  
+
+
+  

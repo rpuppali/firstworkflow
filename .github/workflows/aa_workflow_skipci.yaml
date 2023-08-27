@@ -1,42 +1,12 @@
-name: changeInShell
+name: UsingSimpleJSAction
 on: [push]
-defaults:
-  run:
-    shell: bash
 
 jobs:
-  runOnbashShell:
+  UsingSimpleJSAction:
     runs-on: ubuntu-latest
     steps:
       - name: Display the path
-        run: echo $PATH
-  
-  runOnpwshShell:
-    runs-on: windows-latest
-    steps:
-      - name: Display the path using pwsh
-        run: write-output ${env:PATH}
-        shell: pwsh
-      - name: Display the path
-        run: echo %PATH%
-        shell: cmd
-      - name: run python scripts
-        shell: python
-        run: |
-          import os
-          print(os.environ['PATH']) 
-  
-  runpythonShell:
-    runs-on: windows-latest
-    defaults:
-      run: 
-        shell: python
-    steps:
-      - name: runpythoCommand
-        run: |
-          import os
-          print(os.environ['PATH'])
-  
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: 'Raghav'
 
-
-  
