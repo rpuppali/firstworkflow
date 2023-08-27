@@ -19,6 +19,9 @@ jobs:
           echo $GITHUB_WORKSPACE
   display_windows_info:
     runs-on: windows-latest
+  defaults:
+      run:
+        shell: pwsh
     steps:
       - name: Display working directory and list files
         run: |
