@@ -1,25 +1,16 @@
-name : RunningJobAfteranotherjob
+name: runSimpleCommands
 on: [push]
 
 jobs:
-    DisplayHelloWorld:
-        runs-on: ubuntu-latest
-        steps:
-          - name: say hello world
-            run: echo "hello world"
-          - name: multiline statements
-            run: |
-              node -v
-              npm -v
-# if first job fails second job doesnt execute
-        # - name: error
-        #   run: error
-    dependant-job:
-      runs-on: windows-latest
-# needs helps to set dependency on other jobs
-      needs: DisplayHelloWorld
-      steps:
-        - name: echo a string
-          run: Write-Output "Windows String"
-        - name: echo a string
-          run: Write-Output "Skip CI"
+  DisplayHelloWorld:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say hello world
+        run: echo "hello world"
+      - name: multiline statements
+        run: |
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE

@@ -9,5 +9,8 @@ jobs:
         run: echo "hello world"
       - name: multiline statements
         run: |
-          node -v
-          npm -v
+          pwd
+          ls -al
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
