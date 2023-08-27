@@ -19,4 +19,8 @@ jobs:
       - name: currentDirectory
         run: |
           write-output "Hello World"
-      
+      - name: run python scripts
+        shell: python
+        run: |
+          import os
+          print(os.environ['PATH']) 
