@@ -2,8 +2,8 @@ name: run-simple-commands
 on: [push]
 
 jobs:
-  say-hello-world:
+  DisplayHelloWorld:
     runs-on: ubuntu-latest
     steps:
-      - name: say-hello-world
+      - name: say hello world
         run: echo "hello world"
