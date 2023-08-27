@@ -1,26 +1,6 @@
-name : Running_simple_shell_commands
+name: run-simple-commands
 on: [push]
 
-jobs: 
-  run-shell-commands:
+jobs:
+  say-hello-world:
     runs-on: ubuntu-latest
-    steps:
-      - name: echo a string 
-        run: echo "Hello World"
-      - name: multiline run-shell-commands
-        run: |
-          node -v 
-          npm -v
-  parallel-job-macos:
-    runs-on: macos-latest
-    steps:
-        - name: view sw version
-          run: sw_vers
-  dependant-job:
-    runs-on: windows-latest
-    needs: run-shell-commands
-    steps:
-        - name: echo a string
-          run: Write-Output "Windows String"
-        - name: echo a string
-          run: Write-Output "Skip CI"
