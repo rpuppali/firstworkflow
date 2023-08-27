@@ -1,4 +1,4 @@
-name : Running_simple_shell_commands
+name : RunningJobAfteranotherjob
 on: [push]
 
 jobs:
@@ -11,16 +11,14 @@ jobs:
             run: |
               node -v
               npm -v
-  
-    parallelJobOnMacos:
-    runs-on: macos-latest
-    steps:
-        - name: view sw version
-          run: sw_vers
-  dependant-job:
-    runs-on: windows-latest
-    needs: DisplayHelloWorld
-    steps:
+# if first job fails second job doesnt execute
+        # - name: error
+        #   run: error
+    dependant-job:
+      runs-on: windows-latest
+# needs helps to set dependency on other jobs
+      needs: DisplayHelloWorld
+      steps:
         - name: echo a string
           run: Write-Output "Windows String"
         - name: echo a string
