@@ -7,10 +7,10 @@ jobs:
     steps:
       - name: say hello world
         run: echo "hello world"
-      - name: multiline statements
+      - name: currentDirectory
         run: |
           pwd
-      - name: change in working directory
+      - name: changeInWorkingDirectory
         working-directory: /home/runner
         run: |
             pwd
