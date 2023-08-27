@@ -11,10 +11,12 @@ jobs:
             run: |
               node -v
               npm -v
-          - name: error
-            run: error
+# if first job fails second job doesnt execute
+        # - name: error
+        #   run: error
     dependant-job:
       runs-on: windows-latest
+# needs helps to set dependency on other jobs
       needs: DisplayHelloWorld
       steps:
         - name: echo a string
