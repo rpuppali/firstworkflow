@@ -17,7 +17,6 @@ jobs:
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
           echo $GITHUB_WORKSPACE
-          echo $GITHUB_ACTOR
 # Change in working directory
       - name: Change in working directory
         working-directory: /home/runner/
