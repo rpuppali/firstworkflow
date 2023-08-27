@@ -5,7 +5,7 @@ jobs:
   UsageOfcheckoutAction:
     runs-on: ubuntu-latest
     steps:
-    - name: Display
+    - name: Display1
       run: |
           echo $GITHUB_SHA
           echo $GITHUB_REF
