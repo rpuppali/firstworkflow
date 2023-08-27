@@ -1,7 +1,7 @@
 name : aa_workflow5_running on different shells 
 
 on: [push]
-# by default it runs on shell mentioned for all jobs
+# shell can be mentioned at workflow level 
 defaults:
   run: 
     shell: bash
@@ -19,6 +19,7 @@ jobs:
           echo $GITHUB_WORKSPACE
   display_windows_info:
     runs-on: windows-latest
+# shell can mentioned at jobs level
     defaults:
       run:
         shell: pwsh
@@ -30,5 +31,9 @@ jobs:
           echo $env:GITHUB_SHA
           echo $env:GITHUB_REPOSITORY
           echo $env:GITHUB_WORKSPACE
-
-  
+# shell can be mentioned at steps level
+      - name: running python shell
+        shell: python
+        run : |
+          import platform
+          print (platform.processor())
