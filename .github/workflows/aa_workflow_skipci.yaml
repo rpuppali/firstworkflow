@@ -4,3 +4,6 @@ on: [push]
 jobs:
   say-hello-world:
     runs-on: ubuntu-latest
+    steps:
+      - name: say-hello-world
+        run: echo "hello world"
