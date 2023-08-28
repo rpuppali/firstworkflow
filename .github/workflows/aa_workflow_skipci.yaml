@@ -20,4 +20,9 @@ jobs:
         id: contexts
         run: |
           echo '${{ toJson(github) }}'
+          echo '${{ toJson(job) }}'
+          echo '${{ toJson(steps) }}'
+          echo '${{ toJson(runner)}}'
+          echo '${{ toJson(secrets) }}'
+          echo ${{ 'Commit id' }} :: $GITHUB_SHA
           echo ${{ 'Commit id' }} :: $GITHUB_SHA
