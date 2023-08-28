@@ -1,0 +1,19 @@
+name: UsageOfcheckoutAction
+on: [push]
+
+jobs:
+  UsageOfcheckoutAction:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Display1
+      run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+    - uses: actions/checkout@v3
+# GITHUB_SHA - Last git commit id 
+# GITHUB_REF - Last git commit branch
+    - name: Display2 
+      run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+

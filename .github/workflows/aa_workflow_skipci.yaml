@@ -1,19 +1,13 @@
-name: UsageOfcheckoutAction
+name: expression and contexts
+
 on: [push]
 
 jobs:
-  UsageOfcheckoutAction:
+  ExpressionsContexts:
     runs-on: ubuntu-latest
     steps:
-    - name: Display1
-      run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REF
-    - uses: actions/checkout@v3
-# GITHUB_SHA - Last git commit id 
-# GITHUB_REF - Last git commit branch
-    - name: Display2 
-      run: |
-          echo $GITHUB_SHA
-          echo $GITHUB_REF
-
+      - name: Expressions
+        id: Expressions
+        run: |
+          echo $ {{ 1 }}
+          echo $ {{ "This is a string" }}
