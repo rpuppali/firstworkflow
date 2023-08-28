@@ -9,5 +9,10 @@ jobs:
       - name: Expressions
         id: Expressions
         run: |
-          echo $ {{ 1 }}
-          echo $ {{ "This is a string" }}
+          echo ${{ 1 }}
+          echo ${{ "This is a string" }}
+          echo ${{null}}
+          echo ${{true}}
+          echo ${{true}}
+          echo ${{true && false}}
+          echo ${{ true || (false && true)}}}
