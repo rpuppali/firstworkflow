@@ -10,7 +10,7 @@ jobs:
         id: Expressions
         run: |
           echo ${{ 1 }}
-          echo ${{ "This is a string" }}
+          echo ${{ 'This is a string' }}
           echo ${{null}}
           echo ${{true}}
           echo ${{true}}
