@@ -20,4 +20,4 @@ jobs:
         id: contexts
         run: |
           echo '${{ toJson(github) }}'
-          echo $GITHUB.SHA
+          echo $GITHUB_SHA
