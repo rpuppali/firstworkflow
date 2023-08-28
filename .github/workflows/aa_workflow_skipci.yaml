@@ -15,4 +15,8 @@ jobs:
           echo ${{true}}
           echo ${{true}}
           echo ${{true && false}}
-          echo ${{ true || (false && true)}}}
+          echo ${{ true || (false && true)}}
+      - name: contexts
+        id: contexts
+        run: |
+          echo '${{ toJson(github) }}'
