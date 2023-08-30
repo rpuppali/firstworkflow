@@ -1,5 +1,6 @@
-name: expression and contexts
-# string comparison
+name: expression 
+# GitHub ignores case when comparing strings.
+# when you use expressions in an if conditional, you may omit the ${{ }}
 on: [push]
 
 jobs:
@@ -19,5 +20,7 @@ jobs:
           echo ${{ 2 == 2}}
           echo ${{ 1 > 2}}
           echo ${{ 'name'== 'name'}}
-          echo ${{ 'Name'== 'name'}}
+          echo ${{ 'Name'== 'name'}} 
+
+          echo ${{contains('Hello world', 'llo')}}
       
