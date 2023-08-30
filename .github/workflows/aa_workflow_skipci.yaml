@@ -1,27 +1,17 @@
-name: expression 
-# GitHub ignores case when comparing strings.
-# when you use expressions in an if conditional, you may omit the ${{ }}
-on: [push]
-
+name: build
+on: push
 jobs:
-  ExpressionsContexts:
+  job1:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - name: Expressions
-        id: Expressions
-        run: |
-          echo ${{ 1 }}
-          echo ${{ 'This is a string' }}
-          echo ${{null}}
-          echo ${{true}}
-          echo ${{false}}
-          echo ${{true && false}}
-          echo ${{ true || (false && true)}}
-          echo ${{ 2 == 2}}
-          echo ${{ 1 > 2}}
-          echo "::String comparison1:: ${{ 'Name'== 'name'}}"
-          echo "::String comparison2:: ${{ 'Name'== 'name'}}"
-          echo "::contains function::${{contains('Hello world', 'llo')}}"
-          echo "::startWith function::${{startsWith('Hello world', 'He')}}"
-          echo "::endsWith function::${{endsWith('Hello world', 'ld')}}"
-          echo "::format function::${{format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')}}"
+      - id: set-matrix
+        run: echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
+    steps:
+      - run: build
