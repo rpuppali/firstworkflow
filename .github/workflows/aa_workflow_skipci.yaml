@@ -13,19 +13,8 @@ jobs:
           echo ${{ 'This is a string' }}
           echo ${{null}}
           echo ${{true}}
-          echo ${{true}}
+          echo ${{false}}
           echo ${{true && false}}
           echo ${{ true || (false && true)}}
-      - name: contexts
-        id: contexts
-        run: |
-          echo '${{ toJson(github) }}'
-          echo '${{ toJson(job) }}'
-          echo '${{ toJson(steps) }}'
-          echo '${{ toJson(runner)}}'
-          echo '${{ toJson(secrets) }}'
-         
-      - name: env_variables
-        id: env_var
-        run: |
-          echo ${{ 'author'::github.event.commits[0].author.name }}
+          echo ${{ 2 == 2}}
+      
