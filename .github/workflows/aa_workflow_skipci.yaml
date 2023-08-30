@@ -22,5 +22,5 @@ jobs:
           echo ${{ 'name'== 'name'}}
           echo ${{ 'Name'== 'name'}} 
 
-          echo ${{contains('Hello world', 'llo')}}
+          echo "::contains function::${{contains('Hello world', 'llo')}}
       
