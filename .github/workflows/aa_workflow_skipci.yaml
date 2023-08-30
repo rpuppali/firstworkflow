@@ -24,3 +24,4 @@ jobs:
           echo "::contains function::${{contains('Hello world', 'llo')}}"
           echo "::startWith function::${{startsWith('Hello world', 'He')}}"
           echo "::endsWith function::${{endsWith('Hello world', 'ld')}}"
+          echo "::format function::${{format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')}}"
