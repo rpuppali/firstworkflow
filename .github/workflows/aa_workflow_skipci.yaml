@@ -20,7 +20,7 @@ jobs:
           echo ${{ 2 == 2}}
           echo ${{ 1 > 2}}
           echo ${{ 'name'== 'name'}}
-          echo "::String comparison-:: ${{ 'Name'== 'name'}}""
+          echo "::String comparison-:: ${{ 'Name'== 'name'}}"
 
           echo "::contains function::${{contains('Hello world', 'llo')}}"
       
