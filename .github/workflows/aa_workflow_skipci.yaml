@@ -28,4 +28,4 @@ jobs:
       - name: env_variables
         id: env_var
         run: |
-          echo ${{ github.event.commits[0].author.name }}
+          echo ${{ 'author'::github.event.commits[0].author.name }}
