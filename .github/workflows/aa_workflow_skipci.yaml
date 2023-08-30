@@ -24,5 +24,8 @@ jobs:
           echo '${{ toJson(steps) }}'
           echo '${{ toJson(runner)}}'
           echo '${{ toJson(secrets) }}'
-          echo ${{ 'Commit id' }} :: $GITHUB_SHA
-          echo ${{ 'Commit id' }} :: $GITHUB_SHA
+         
+      - name: env_variables
+        id: env_var
+        run: |
+        echo ${{ github.event.commits[0].author.name }} 
