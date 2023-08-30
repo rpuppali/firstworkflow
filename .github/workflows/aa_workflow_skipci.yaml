@@ -17,7 +17,7 @@ jobs:
           echo ${{true && false}}
           echo ${{ true || (false && true)}}
           echo ${{ 2 == 2}}
-          echo ${{ 1 < 2}}
+          echo ${{ 1 > 2}}
           echo ${{ 'name'== 'name'}}
           echo ${{ 'Name'== 'name'}}
       
