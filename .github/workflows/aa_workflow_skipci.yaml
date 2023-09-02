@@ -1,13 +1,21 @@
-name: Context
+#env context is a mapping of variable names to their values
+name: Hi Mascot
 on: push
+env:
+  mascot: Mona
+  super_duper_var: totally_awesome
+
 jobs:
-  Context_info:
-    runs-on: ubuntu-latest
+  windows_job:
+    runs-on: windows-latest
     steps:
-      - name: to JSON
-        run: |
-          echo "::Runner info:: ${{ toJSON(Runner) }}"
-          echo "::Runner info:: ${{ toJSON(GITHUB) }}"  
-          echo "::job info:: ${{ toJSON(job) }}"
-          echo "::Steps info:: ${{ toJSON(steps) }}"
-          echo "::Sectets info:: ${{ toJSON(secrets) }}"
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Mona
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Octocat
+        env:
+          mascot: Octocat
+  linux_job:
+    runs-on: ubuntu-latest
+    env:
+      mascot: Tux
+    steps:
+      - run: echo 'Hi ${{ env.mascot }}'  # Hi Tux

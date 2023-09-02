@@ -1,0 +1,13 @@
+name: Context
+on: push
+jobs:
+  Context_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: to JSON
+        run: |
+          echo "::Runner info:: ${{ toJSON(Runner) }}"
+          echo "::Runner info:: ${{ toJSON(GITHUB) }}"  
+          echo "::job info:: ${{ toJSON(job) }}"
+          echo "::Steps info:: ${{ toJSON(steps) }}"
+          echo "::Sectets info:: ${{ toJSON(secrets) }}"
