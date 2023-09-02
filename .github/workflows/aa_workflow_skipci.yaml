@@ -6,5 +6,6 @@ jobs:
     steps:
       - name: to JSON
         run: |
-          echo '${{ toJSON(github) }}'
-   
+          echo '${{ toJSON(github) }}' 
+          echo "::Commit id:: ${{ 'Name'== 'name'}}"
+          echo "::Runner info:: ${{ toJSON(runner) }}" 
