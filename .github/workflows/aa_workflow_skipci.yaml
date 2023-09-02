@@ -7,4 +7,5 @@ jobs:
       - name: to JSON
         run: |
       
-          echo "::Runner info-:: ${{ toJSON(runner) }}"
+          echo "::Runner info-::"
+          echo '${{ toJSON(runner) }}'
