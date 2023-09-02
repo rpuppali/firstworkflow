@@ -9,4 +9,4 @@ jobs:
           # echo '${{ toJSON(github) }}' 
           # echo "::Commit id:: ${{ 'Name'== 'name'}}"
           echo "::Runner info::"
-          echo '${{ toJSON(runner) }}'' 
+          echo '${{ toJSON(runner) }}'
