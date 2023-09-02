@@ -12,4 +12,4 @@ jobs:
           echo "::job info:: ${{ toJSON(job) }}"
           echo "::Steps info:: ${{ toJSON(steps) }}"
           echo "::Sectets info:: ${{ toJSON(secrets) }}"
-          echo "::github.action_path:: ${{ github.action_path }}"
+          echo "::github.action_path:: ${{ 'github.action_path' }}"
