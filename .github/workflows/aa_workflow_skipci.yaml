@@ -1,19 +1,10 @@
-name: build
+name: Context
 on: push
 jobs:
   job1:
     runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
     steps:
-      - id: set-matrix
+      - name: to JSON
         run: |
-             echo "matrix={\"include\":[{\"project\":\"foo\",\"config\":\"Debug\"},{\"project\":\"bar\",\"config\":\"Release\"}]}" >> $GITHUB_OUTPUT
-             echo "::String comparison1:: $matrix" 
-  job2:
-    needs: job1
-    runs-on: ubuntu-latest
-    strategy:
-      matrix: ${{ fromJSON(needs.job1.outputs.matrix) }}
-    steps:
-      - run: echo "Hello"
+          echo '${{ toJSON(github) }}'
+   
