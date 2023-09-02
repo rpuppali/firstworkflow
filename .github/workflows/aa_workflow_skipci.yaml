@@ -6,5 +6,7 @@ jobs:
     steps:
       - name: to JSON
         run: |
-      
-          echo "::Runner info:: ${{ toJSON(runner) }}"
+          echo "::Runner info:: ${{ toJSON(github) }}"  
+          echo "::Runner info:: ${{ toJSON(job) }}"
+          echo "::Runner info:: ${{ toJSON(steps) }}"
+          echo "::Runner info:: ${{ toJSON(secrets) }}"
