@@ -1,6 +1,5 @@
 name: runSimpleshellCommands
-on: [push]
-
+on: [push, workflow_dispatch]
 jobs:
   DisplayHelloWorldAndMultilineCommands:
     runs-on: ubuntu-latest

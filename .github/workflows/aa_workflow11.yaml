@@ -1,3 +1,4 @@
+name: var context
 on:
   workflow_dispatch:
 env:
