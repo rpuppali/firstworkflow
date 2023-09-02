@@ -1,7 +1,7 @@
 name: expression 
 # GitHub ignores case when comparing strings.
 # when you use expressions in an if conditional, you may omit the ${{ }}
-on: [push]
+on: [push, workflow_dispatch]
 
 jobs:
   ExpressionsContexts:

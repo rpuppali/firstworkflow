@@ -1,6 +1,5 @@
 name: UsageOfcheckoutAction
-on: [push]
-
+on: [push, workflow_dispatch]
 jobs:
   UsageOfcheckoutAction:
     runs-on: ubuntu-latest

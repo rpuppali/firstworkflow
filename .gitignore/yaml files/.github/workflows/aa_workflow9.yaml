@@ -1,5 +1,6 @@
+# GITHUB - Information about the workflow run
 name: Context
-on: push
+on: [push, workflow_dispatch]
 jobs:
   Context_info:
     runs-on: ubuntu-latest
@@ -7,7 +8,7 @@ jobs:
       - name: to JSON
         run: |
           echo "::Runner info:: ${{ toJSON(Runner) }}"
-          echo "::Runner info:: ${{ toJSON(GITHUB) }}"  
+          echo "::Runner info:: ${{ toJSON(GITHUB) }}" 
           echo "::job info:: ${{ toJSON(job) }}"
           echo "::Steps info:: ${{ toJSON(steps) }}"
           echo "::Sectets info:: ${{ toJSON(secrets) }}"

@@ -1,5 +1,5 @@
 name: changeInShell
-on: [push]
+on: [push, workflow_dispatch]
 # setting default shell to bash. bash for linux
 defaults:
   run:
