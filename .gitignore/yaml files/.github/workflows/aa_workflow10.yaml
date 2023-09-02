@@ -1,5 +1,5 @@
 # env context is a mapping of variable names to their values
-name: Hi Mascot
+name: env context
 on: [push, workflow_dispatch]
 env:
   mascot: Mona
