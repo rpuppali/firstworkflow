@@ -1,6 +1,6 @@
 # GITHUB - Information about the workflow run
 name: Run CI
-on: [push]
+on: [push, pull_request]
 
 jobs:
   normal_ci:
@@ -11,7 +11,15 @@ jobs:
 
   push_request_ci:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' }}
     steps:
       - name: SYSOUT
-        run: echo 'github.event is triggered '
+        run: echo 'github.event -push is triggered '
+    
+  pull_request_ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push_request' }}
+    steps:
+      - name: SYSOUT
+        run: echo 'github.event - pull request is triggered '    
+  
