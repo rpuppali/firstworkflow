@@ -8,11 +8,11 @@ jobs:
     steps:
       - name: SYSOUT
         run: |
-          echo ${{github.action}}
-          echo ${{github.event}}
-          echo ${{github.event_name}}
+          echo "::Github action:: ${{github.action}}"
+          echo "::Github event:: ${{github.event}}"
+          echo "::Github event name:: ${{github.event_name}}"
           echo ${{github.job}}
           echo ${{github.action_status}}
           echo ${{github.actor}}
-          echo ${{github.workflow	}}
+          echo ${{github.workflow}}
 
