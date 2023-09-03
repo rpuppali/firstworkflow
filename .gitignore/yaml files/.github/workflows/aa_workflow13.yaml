@@ -23,4 +23,4 @@ jobs:
         run:  echo "Its Raghav"
       - name: echo github context usage
         if: ${{github.actor != 'rpuppali'}}
-        run:  echo "Its not Raghav"
+        run:  echo "Step wont run if condition fails"
