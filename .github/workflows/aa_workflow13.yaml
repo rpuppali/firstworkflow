@@ -3,7 +3,7 @@ name: Run CI
 on: [push, pull_request]
 
 jobs:
-  github-context:
+  github-context_learning:
     runs-on: ubuntu-latest
     steps:
       - name: echo github context
@@ -13,3 +13,4 @@ jobs:
           echo "::Github job:: ${{github.job}}"
           echo "::github actor:: ${{github.actor}}"
           echo "::github workflow:: ${{github.workflow}}"
+          echo "::github run id:: ${{github.run_id}}"
