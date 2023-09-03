@@ -14,4 +14,4 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: SYSOUT
-        run: echo 'Hello Raghav - if '
+        run: echo 'github.event is triggered '
