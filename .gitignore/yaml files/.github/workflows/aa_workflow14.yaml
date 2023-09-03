@@ -1,0 +1,20 @@
+# github job context - 6
+name: Run CI
+on: [push, pull_request]
+
+jobs:
+  one:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: echo "one"
+  two:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "two"
+  three:
+    runs-on: ubuntu-latest
+    needs: [one, two]
+    if: always()
+    steps:
+      - run: echo "How to know the status of execution of jobs.one and jobs.two?"
