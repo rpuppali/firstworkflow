@@ -6,14 +6,12 @@ jobs:
   normal_ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Run normal CI
-        run: ./run-tests
+      - name: SYSOUT
+        run: echo 'Hello Raghav'
 
-  pull_request_ci:
+  push_request_ci:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'push' }}
     steps:
-      - uses: actions/checkout@v3
-      - name: Run PR CI
-        run: ./run-additional-pr-ci
+      - name: SYSOUT
+        run: echo 'Hello Raghav - if '
