@@ -9,9 +9,7 @@ jobs:
       - name: echo github context
         run: |
           echo "::Github action:: ${{github.action}}"
-          echo "::Github event:: ${{github.event}}"
           echo "::Github event name:: ${{github.event_name}}"
           echo "::Github job:: ${{github.job}}"
-          echo "::github action status:: ${{github.action_status}}"
           echo "::github actor:: ${{github.actor}}"
           echo "::github workflow:: ${{github.workflow}}"
