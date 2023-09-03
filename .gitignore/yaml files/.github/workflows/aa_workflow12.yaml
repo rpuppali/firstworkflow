@@ -1,4 +1,4 @@
-# GITHUB - Information about the workflow run
+# github context - 4
 name: Run CI
 on: [push, pull_request]
 

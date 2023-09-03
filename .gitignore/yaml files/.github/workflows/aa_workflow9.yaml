@@ -1,4 +1,4 @@
-# GITHUB - Information about the workflow run
+# github context :
 name: Context
 on: [push, workflow_dispatch]
 jobs:

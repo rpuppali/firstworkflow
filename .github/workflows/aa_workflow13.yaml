@@ -1,0 +1,11 @@
+# github context - 5
+name: Run CI
+on: [push, pull_request]
+
+jobs:
+  normal_ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SYSOUT
+        echo ${{github.action_path}}
+
