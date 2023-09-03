@@ -11,7 +11,7 @@ jobs:
 
   push_request_ci:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: SYSOUT
         run: echo 'Hello Raghav - if '
