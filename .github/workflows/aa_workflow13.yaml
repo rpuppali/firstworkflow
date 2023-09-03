@@ -7,5 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SYSOUT
-        run: echo ${{github.action_path}}
+        run: |
+          echo ${{github.action}}
+          echo ${{github.event}}
+          echo ${{github.event_name}}
+          echo ${{github.job}}
+          echo ${{github.action_status}}
+          echo ${{github.actor}}
+          echo ${{github.workflow	}}
 
