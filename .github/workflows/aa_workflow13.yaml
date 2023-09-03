@@ -14,3 +14,14 @@ jobs:
           echo "::github actor:: ${{github.actor}}"
           echo "::github workflow:: ${{github.workflow}}"
           echo "::github run id:: ${{github.run_id}}"
+
+  github-context_usage:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo github context
+        run: |
+          if: (echo "::Github action:: ${{github.action}}") = 'rpuppali')
+          echo "Its Raghav" 
+          if: (echo "::Github action:: ${{github.action}}") != 'rpuppali')
+          echo "Its not Raghav" 
+                  
