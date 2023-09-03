@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: SYSOUT
-        echo ${{github.action_path}}
+        run: echo ${{github.action_path}}
 
