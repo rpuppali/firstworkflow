@@ -3,10 +3,10 @@ name: Run CI
 on: [push, pull_request]
 
 jobs:
-  normal_ci:
+  github-context:
     runs-on: ubuntu-latest
     steps:
-      - name: SYSOUT
+      - name: echo github context
         run: |
           echo "::Github action:: ${{github.action}}"
           echo "::Github event:: ${{github.event}}"
