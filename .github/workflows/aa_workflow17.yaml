@@ -1,3 +1,4 @@
+# Disable a single GitHub Action job
 name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: [push]
