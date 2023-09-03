@@ -18,10 +18,9 @@ jobs:
   github-context_usage:
     runs-on: ubuntu-latest
     steps:
-      - name: echo github context
-        run: |
-          if: (echo "::Github action:: ${{github.action}}") = 'rpuppali')
-          echo "Its Raghav" 
-          if: (echo "::Github action:: ${{github.action}}") != 'rpuppali')
-          echo "Its not Raghav" 
-                  
+      - name: echo github context usage
+        if: ${{github.actor == 'rpuppali'}}
+        run:  echo "Its Raghav"
+      - name: echo github context usage
+        if: ${{github.actor != 'rpuppali'}}
+        run:  echo "Its not Raghav"
