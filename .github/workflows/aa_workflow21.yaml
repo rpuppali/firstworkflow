@@ -1,0 +1,13 @@
+name: matrix
+on: [push, workflow_dispatch]
+
+jobs:
+    job-1:
+      runs-on: ubuntu-latest
+      steps:
+        - name: install node
+          run: node -v
+        - uses: actions/setup-node@v3
+          with: 
+            node-version: 13
+        - run: node -v
