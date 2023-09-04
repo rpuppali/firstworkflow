@@ -13,10 +13,10 @@ jobs:
         id: steps2
         continue-on-error: true
         run: exit 1
-      - name: Runs on failure
+      - name: Runs on steps -2 failure
         # if: failure()
-        if: steps.steps2.conclusion == 'failure'
-        run: echo "Runs on only failure"
+        if: failure() && steps.steps2.conclusion == 'failure'
+        run: echo "step-2 is failed"
       - name: Runs on success
         # this is not required. By default
         if: success()
