@@ -1,4 +1,5 @@
 # continue_on_error - true :
+# timeout-minutes. Default value is 36
 
 name: status check functions
 on: [push, pull_request,workflow_dispatch]
@@ -6,6 +7,7 @@ on: [push, pull_request,workflow_dispatch]
 jobs:
   job-1:
     runs-on: ubuntu-latest
+    timeout-minutes: 2 # at job level
     steps:
       - name: Steps -1 
         run: sleep 90
