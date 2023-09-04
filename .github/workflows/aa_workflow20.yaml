@@ -11,7 +11,7 @@ jobs:
         run: sleep 20
       - name: steps-2
         id: steps2
-        continue-on-error: false
+        continue-on-error: true
         run: exit 1
       - name: Runs on failure
         # if: failure()
