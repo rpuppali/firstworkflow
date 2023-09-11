@@ -1,13 +1,14 @@
-name: matrix
+name: basic shell commands
 on: [push, workflow_dispatch]
 
 jobs:
-    job-1:
+    job1:
       runs-on: ubuntu-latest
       steps:
-        - name: install node
-          run: node -v
-        - uses: actions/setup-node@v3
-          with: 
-            node-version: 13
-        - run: node -v
+        - name: Say hello world
+          run: echo "Hello World"
+        - name: run shell commands
+          run: |
+            ls -al
+            pwd
+            
