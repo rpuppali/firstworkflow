@@ -12,4 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run shell
+        working-directory: ${{ github.workspace }}/FIRST-WORKFLW
         run: ./shellscript.sh
