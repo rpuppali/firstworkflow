@@ -1,26 +1,12 @@
-name: ChangeInShell
+name: Usage of simpleJSaction
 on: [push, workflow_dispatch]
 
-defaults:
-  run:
-    shell: bash
 jobs:
-  bashShell:
+  UsageofJSAction:
     runs-on: ubuntu-latest
     steps:
-      - name: display helloworld
-        run: echo 'Hello World'
-  powerShell:
-    runs-on: windows-latest
-    steps:
-      - name: display helloworld
-        run: echo 'Hello World'
-        shell: pwsh
-  pythonShell:
-    runs-on: ubuntu-latest
-    steps:
-      - name: display helloworld
-        run: |
-          import os
-          print(os.environ['PATH']) 
-        shell: python
+      - name: greet the user
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: 'Raghav'
