@@ -8,4 +8,7 @@ jobs:
         id: greet
         uses: actions/checkout@v3
       - name: run shell
-        run: ${GITHUB_WORKSPACE}/scripts/shellscript.sh
+        run: |         
+          chmod +x ./shellscript.sh
+          ./shellscript.sh
+        shell: bash
