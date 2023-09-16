@@ -1,10 +1,15 @@
 name: Usage of simpleJSaction
 on: [push, workflow_dispatch]
 jobs:
-  runShellScript:
+  getgithubrepo:
     runs-on: ubuntu-latest
     steps:
       - name: displayHelloWorld
         id: greet
         uses: actions/checkout@v3
-        
+  
+  runShellScript:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run shell
+        run: .shellscript.sh 
