@@ -1,14 +1,19 @@
-name: basic shell commands
+
+name: ChangeInShell
 on: [push, workflow_dispatch]
 
+defaults:
+  run:
+    shell: bash
 jobs:
-    job1:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Say hello world
-          run: echo "Hello World"
-        - name: run shell commands
-          run: |
-            ls -al
-            pwd
-            
+  bashShell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display helloworld
+        run: echo 'Hello World'
+  powerShell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: display helloworld
+        run: echo 'Hello World'
+        shell: pwsh
