@@ -7,6 +7,8 @@ jobs:
       - name: displayHelloWorld
         id: greet
         uses: actions/checkout@v3
+      - name: folder path
+        run: "::github.action_path:: ${{ github.action_path }}"
       - name: run shell
         run: |         
           chmod +x ./shellscript.sh
