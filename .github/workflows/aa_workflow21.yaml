@@ -7,7 +7,4 @@ jobs:
       - name: displayHelloWorld
         id: greet
         uses: actions/checkout@v3
-      - name: run shell script
-        run : |
-          echo " Run shell script"
-      
+        
