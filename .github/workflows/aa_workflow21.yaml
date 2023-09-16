@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: run shell
         working-directory: ${{ github.workspace }}/FIRST-WORKFLW
-        run: ./shellscript.sh
+        run: bash ./shellscript.sh
