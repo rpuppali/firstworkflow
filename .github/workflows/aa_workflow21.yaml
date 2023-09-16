@@ -1,15 +1,13 @@
 name: Usage of simpleJSaction
 on: [push, workflow_dispatch]
-
 jobs:
-  UsageofJSAction:
+  runShellScript:
     runs-on: ubuntu-latest
     steps:
-      - name: greet the user
+      - name: displayHelloWorld
         id: greet
-        uses: actions/hello-world-javascript-action@v1.1
-        with:
-          who-to-greet: 'Raghav'
-      - name: display greet time
-        run : echo "${{steps.greet.outputs.time}}""
+        uses: actions/checkout@v3
+      - name: run shell script
+        run : |
+          echo " Run shell script"
       
