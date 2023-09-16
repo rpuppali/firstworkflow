@@ -1,13 +1,14 @@
-name: Usage of simpleJSaction
+name: UsageOfcheckoutAction
 on: [push, workflow_dispatch]
 jobs:
-  getgithubrepo:
+  UsageOfcheckoutAction:
     runs-on: ubuntu-latest
     steps:
-      - name: displayHelloWorld
-        id: greet
+      - name: files before checkout
+        run: ls -l
+      - name: Check out action
+        id: Checkout
         uses: actions/checkout@v3
-      - name: folder path
-        run: |
-          echo "::github.action_path:: ${{ github.action_path }}"
+      - name: files after checkout
+        run: ls -l
       
