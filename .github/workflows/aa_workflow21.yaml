@@ -3,6 +3,9 @@ on: [push, workflow_dispatch]
 jobs:
   getgithubrepo:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./scripts
     steps:
       - name: displayHelloWorld
         id: greet
@@ -12,5 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: run shell
-        working-directory: ${{ github.workspace }}/FIRST-WORKFLW
         run: bash ./shellscript.sh
