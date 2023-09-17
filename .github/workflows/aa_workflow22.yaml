@@ -1,0 +1,14 @@
+name: UsageOfmatrix-onedimential
+on: [push, workflow_dispatch]
+jobs:
+  UsageOfmatrix:
+    strategy:
+      matrix:
+        node-version: [14, 15, 16]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+      
