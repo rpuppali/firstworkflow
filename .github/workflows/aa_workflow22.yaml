@@ -13,6 +13,7 @@ jobs:
           node-version: ${{matrix.node-version}}
           
   UsageOfmatrix2d:
+    contiunue-on-error: false
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
