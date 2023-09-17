@@ -12,4 +12,5 @@ jobs:
       - name: set-up node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-version}}        
+          node-version: ${{matrix.node-version}}  
+          run : node -v      
