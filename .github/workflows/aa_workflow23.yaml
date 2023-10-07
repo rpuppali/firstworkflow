@@ -1,4 +1,4 @@
-name: first_workflow
+name: dependant_jobs
 on: [push, workflow_dispatch]
 
 jobs:
@@ -7,4 +7,11 @@ jobs:
     steps:
     - name: Display hello world
       run : echo "Hello world"
-  
+  secondjob:
+    runs-on: ubuntu-latest
+    needs: firstjob
+    steps:
+    - name: run when first job is successful
+      run: |
+        ls -l
+        pwd
