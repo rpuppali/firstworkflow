@@ -6,12 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Display hello world
-      run : ech "Hello world"
+      run : 
+        pwd
   secondjob:
     runs-on: ubuntu-latest
     needs: firstjob
     steps:
     - name: run when first job is successful
+      working-directory: /home/runner/
       run: |
-        ls -l
         pwd
