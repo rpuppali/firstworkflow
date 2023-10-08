@@ -16,7 +16,6 @@ jobs:
     needs: firstjob
     steps:
     - name: run on pwsh
-      working-directory: /home/runner/
       shell: pwsh
       run: |
         Get-TimeZone
