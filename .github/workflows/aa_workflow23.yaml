@@ -6,14 +6,8 @@ defaults:
     shell: bash
     
 jobs:
-  UsageOfcheckoutAction:
+  expressions:
     runs-on: ubuntu-latest
     steps:
-    - name: files before checkout
-      run: ls -l
-
-    - name: Check out action
-      id: Checkout
-      uses: actions/checkout@v3
-    - name: files after checkout
-      run: ls -l
+    - name: expressions-1
+      run: echo ${{'Hello'}}
