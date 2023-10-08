@@ -11,5 +11,6 @@ jobs:
     steps:
     - name: expressions-1
       run: echo ${{'Hello'}}
-           echo ${{true}}
+    - name: expressions-2
+      run: echo ${{true}}
 
