@@ -13,4 +13,7 @@ jobs:
       run: echo ${{'Hello'}}
     - name: expressions-2
       run: echo ${{true}}
-
+    - name: expressions-3
+      run: echo ${{false}}
+    - name: expressions-4
+      run: "::Display true::${{false}}"
