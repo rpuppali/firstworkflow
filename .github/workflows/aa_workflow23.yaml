@@ -20,4 +20,12 @@ jobs:
       run: |
         Get-TimeZone
         Get-Help
-   
+  thirdjob:
+    runs-on: windows-latest
+    needs: firstjob
+    steps:
+    - name: run on pwsh
+      shell: python
+      run: |
+        import os
+        print(os.environ['PATH'])
