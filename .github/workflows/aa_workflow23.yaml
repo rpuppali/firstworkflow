@@ -17,4 +17,6 @@ jobs:
       run: echo ${{false}}
     - name: expressions-4
       run: echo "::Contains function::${{contains('Hello World','llo')}}"
+    - name: expressions-5
+      run: echo "::format function::${{format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')}}"
 
