@@ -19,4 +19,5 @@ jobs:
       shell: pwsh
       run: |
         Get-TimeZone
+        Get-Help
    
