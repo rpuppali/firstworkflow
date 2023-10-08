@@ -19,7 +19,5 @@ jobs:
       working-directory: /home/runner/
       shell: pwsh
       run: |
-        Get-Help
-    - name: run on cmd
-      run: 
-        ls -l
+        Get-TimeZone
+   
