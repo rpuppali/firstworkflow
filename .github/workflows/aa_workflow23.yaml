@@ -1,6 +1,9 @@
-name: dependant_jobs
+name: ChangeInShell
 on: [push, workflow_dispatch]
 
+defaults:
+  run:
+    shell: bash
 jobs:
   firstjob:
     runs-on: ubuntu-latest
@@ -9,10 +12,15 @@ jobs:
       run : 
         pwd
   secondjob:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: firstjob
     steps:
-    - name: run when first job is successful
+    - name: run on pwsh
       working-directory: /home/runner/
+      shell: pwsh
       run: |
-        pwd
+        write-output ${env:PATH}
+    - name: run on cmd
+      run: 
+        ls -l
+        
