@@ -16,4 +16,5 @@ jobs:
     - name: expressions-3
       run: echo ${{false}}
     - name: expressions-4
-      run: "::Contains function::${{contains('Hello World','llo')}}"
+      run: echo "::Contains function::${{contains('Hello World','llo')}}"
+
