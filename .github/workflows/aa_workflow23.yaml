@@ -1,22 +1,25 @@
-name: ChangeInShell
-on: [push, workflow_dispatch]
+# github context - 4
+name: Run CI
+on: [push, pull_request]
 
-defaults:
-  run:
-    shell: bash
-    
 jobs:
-  expressions:
+  normal_ci:
     runs-on: ubuntu-latest
     steps:
-    - name: expressions-1
-      run: echo ${{'Hello'}}
-    - name: expressions-2
-      run: echo ${{true}}
-    - name: expressions-3
-      run: echo ${{false}}
-    - name: expressions-4
-      run: echo "::Contains function::${{contains('Hello World','llo')}}"
-    - name: expressions-5
-      run: echo "::format function::${{format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')}}"
+      - name: SYSOUT
+        run: echo 'Hello Raghav'
 
+  push_request_ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: SYSOUT
+        run: echo 'github.event -push is triggered '
+    
+  pull_request_ci:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push_request' }}
+    steps:
+      - name: SYSOUT
+        run: echo 'github.event - pull request is triggered '    
+  
