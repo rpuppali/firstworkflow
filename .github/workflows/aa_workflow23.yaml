@@ -8,24 +8,8 @@ jobs:
   firstjob:
     runs-on: ubuntu-latest
     steps:
-    - name: Display hello world
-      run : 
-        pwd
-  secondjob:
-    runs-on: windows-latest
-    needs: firstjob
-    steps:
-    - name: run on pwsh
-      shell: pwsh
-      run: |
-        Get-TimeZone
-        Get-Help
-  thirdjob:
-    runs-on: windows-latest
-    needs: firstjob
-    steps:
-    - name: run on pwsh
-      shell: python
-      run: |
-        import os
-        print(os.environ['PATH'])
+    - name: greet SLK
+      uses: action/hello-world-javascript-action@v1.1
+      with:
+        who-to-greet: Raghav
+   
