@@ -19,8 +19,7 @@ jobs:
       working-directory: /home/runner/
       shell: pwsh
       run: |
-        write-output ${env:PATH}
+        Get-Help
     - name: run on cmd
       run: 
         ls -l
-        
