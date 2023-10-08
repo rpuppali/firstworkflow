@@ -4,14 +4,16 @@ on: [push, workflow_dispatch]
 defaults:
   run:
     shell: bash
+    
 jobs:
-  firstjob:
+  UsageOfcheckoutAction:
     runs-on: ubuntu-latest
     steps:
-    - name: greet SLK
-      id: hello
-      uses: actions/hello-world-javascript-action@v1.1
-      with:
-        who-to-greet: Raghav
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: files before checkout
+      run: ls -l
+
+    - name: Check out action
+      id: Checkout
+      uses: actions/checkout@v3
+    - name: files after checkout
+      run: ls -l
