@@ -1,25 +1,13 @@
-# github context - 4
-name: Run CI
-on: [push, pull_request]
-
+name: UsageOfcheckoutAction
+on: [push, workflow_dispatch]
 jobs:
-  normal_ci:
+  UsageOfcheckoutAction:
     runs-on: ubuntu-latest
     steps:
-      - name: SYSOUT
-        run: echo 'Hello Raghav'
-
-  push_request_ci:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push' }}
-    steps:
-      - name: SYSOUT
-        run: echo 'github.event -push is triggered '
-    
-  pull_request_ci:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'push_request' }}
-    steps:
-      - name: SYSOUT
-        run: echo 'github.event - pull request is triggered '    
-  
+      - name: files before checkout
+        run: ls -l
+      - name: Check out action
+        id: Checkout
+        uses: actions/checkout@v3
+      - name: files after checkout
+        run: ls -l
