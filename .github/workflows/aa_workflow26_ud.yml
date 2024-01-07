@@ -9,6 +9,7 @@ on:
 jobs:
   save-results:
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - uses: actions/github-script@v7
         id: set-result
