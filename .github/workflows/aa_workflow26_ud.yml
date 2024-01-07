@@ -4,6 +4,7 @@ name: Usage of actions/github-script
 on:
   issues:
     types: [opened]
+  push:
 
 jobs:
   comment:
