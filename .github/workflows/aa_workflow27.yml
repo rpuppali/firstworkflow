@@ -6,10 +6,11 @@ jobs:
   run-postman-collection:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run collection
-        uses: postmanlabs/newman-action@v1
+      - uses: actions/checkout@main
+      - uses: matt-ball/newman-action@main              
+        with:
+          collection: TestAPIONCLI.postman_collectionv1.json
+          # environment: postman_environment.json
         # with:
         #   collection: TestAPIONCLI.postman_collectionv1.json
         # #   environment: Testing/Pokemon.postman_environment.json
