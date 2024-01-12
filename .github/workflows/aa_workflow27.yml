@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: matt-ball/newman-action@main              
+      - uses: matt-ball/newman-action@master              
         with:
           collection: TestAPIONCLI.postman_collectionv1.json
           # environment: postman_environment.json
