@@ -10,9 +10,10 @@ jobs:
       - uses: matt-ball/newman-action@master              
         with:
           collection: TestAPIONCLI.postman_collectionv1.json
-          # environment: postman_environment.json
-        # with:
-        #   collection: TestAPIONCLI.postman_collectionv1.json
-        # #   environment: Testing/Pokemon.postman_environment.json
-        #   reporters: cli,htmlextra
-        #   reporter-htmlextra-export: report.html
+      - name: Upload report
+        uses: google-github-actions/upload-cloud-storage@v0.4.0
+        with:
+            path: report.html
+            destination: gs://my-bucket/report.html
+        env:
+            GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
