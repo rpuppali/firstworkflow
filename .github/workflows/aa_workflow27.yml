@@ -1,0 +1,17 @@
+name: Postman to GCP
+
+on: workflow_dispatch
+
+jobs:
+  run-postman-collection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run collection
+        uses: postmanlabs/newman-action@v1
+        with:
+          collection: TestAPIONCLI.postman_collectionv1.json
+        #   environment: Testing/Pokemon.postman_environment.json
+          reporters: cli,htmlextra
+          reporter-htmlextra-export: report.html
