@@ -11,3 +11,4 @@ jobs:
           pwd
           ls -al
           ls -lrt
+          ls -lrt
