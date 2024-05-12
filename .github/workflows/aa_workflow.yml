@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: step1
         run: |
-          echo "Hello Tech Evo team, Welcome to GitHub actions"
+          echo "Hello Tech Evo team, Welcome to GitHub actions world"
             ls -al
   job2:
     runs-on: ubuntu-latest
