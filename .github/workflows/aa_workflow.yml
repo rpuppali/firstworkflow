@@ -1,6 +1,10 @@
 name: workdingdirectories
 on: [push, workflow_dispatch]
 
+defaults:
+  run: 
+    shell: bash
+    working-directory: /home/runner/ 
 jobs:
   job1:
     runs-on: ubuntu-latest
@@ -12,3 +16,19 @@ jobs:
             echo $GITHUB_SHA
             echo $GITHUB_REPOSITORY
             echo $GITHUB_WORKSPACE
+              
+  job2:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: display working directory
+        working-directory: /home/runner/work/firstworkflow/
+        run: |
+            pwd
+            ls -al
+            echo $GITHUB_SHA
+            echo $GITHUB_REPOSITORY
+            echo $GITHUB_WORKSPACE
+
+            echo $GITHUB_WORKSPACE
+
