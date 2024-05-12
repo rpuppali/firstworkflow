@@ -9,4 +9,4 @@ jobs:
       - name: multiline statements
         run: |
           pwd
-          ls -lrt
+          ls -al
