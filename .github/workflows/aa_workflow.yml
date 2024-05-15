@@ -7,7 +7,11 @@ jobs:
     steps:
       - name: list the files before checkout
         run: ls -al
-      - name: Simple JS action
+      - name: Display commit and ref details
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
+      - name: Checkout repo
         id: checkout
         uses: actions/checkout@v4
       - name: list the files after checkout
