@@ -5,14 +5,11 @@ jobs:
   firstJob:
     runs-on: ubuntu-latest
     steps:
-      - name: files before checkout
-        run: |
-           ls -l
+       - name: before check out
+         run: ls -l
+       - name: before check out
+         uses: actions\checkout@v3
+       - name: after check out
+         run: ls -l
 
-      - name: git-checkout 
-        id: checkout 
-        uses: actions/checkout@v3
-
-      - name: files after checkout
-        run: ls -l 
         
