@@ -9,15 +9,7 @@ jobs:
         run: |
            ls -l
            echo "hello"
-  paralleljob:
-    runs-on: windows-latest
-    steps:
-      - name: name2
-        run: systeminfo
 
-  dependantjob:
-    runs-on: ubuntu-latest
-    needs: firstJob
-    steps: 
-      - name: echo-2
-        run: echo "hello 2"
+      - name: name2
+        working-directory: /home/runner/
+        run: ls- al
