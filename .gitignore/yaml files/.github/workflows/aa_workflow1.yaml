@@ -1,12 +1,36 @@
+# Defines the name of the GitHub Actions workflow
 name: runSimpleshellCommands
+
+# Specifies the events that trigger the workflow
 on: [push, workflow_dispatch]
+# - 'push': Workflow runs when code is pushed to any branch
+# - 'workflow_dispatch': Allows manual triggering of the workflow from GitHub UI
+
+# Defines the jobs to be executed in the workflow
 jobs:
+  # Name of the job, can be any descriptive string
   DisplayHelloWorldAndMultilineCommands:
+    # Specifies the type of runner (virtual machine) to use
     runs-on: ubuntu-latest
+    # - 'ubuntu-latest': Uses the latest version of Ubuntu available in GitHub Actions
+    #   Provides a Linux environment for executing commands
+
+    # Lists the steps to be executed in this job
     steps:
+      # First step: named for clarity in logs and UI
       - name: say hello world
+        # Command to execute in the runner's shell
         run: echo "hello world"
+        # - 'echo' is a shell command that outputs text to the console
+        # - Prints "hello world" to the workflow logs
+
+      # Second step: demonstrates multiple commands
       - name: multiline statements
+        # Uses YAML multiline syntax (|) to specify multiple commands
         run: |
           pwd
           ls -al
+        # - 'pwd': Prints the current working directory of the runner
+        # - 'ls -al': Lists all files and directories in long format
+        #   - '-a': Shows hidden files (starting with .)
+        #   - '-l': Uses long listing format showing details like permissions, owner, size

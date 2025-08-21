@@ -1,16 +1,54 @@
-name: UseOfSimpleAction
-on: push
+# Defines the name of the GitHub Actions workflow
+name: Runningdependantjob
 
+# Specifies the events that trigger the workflow
+on: [push, workflow_dispatch]
+# - 'push': Triggers workflow when code is pushed to any branch
+# - 'workflow_dispatch': Enables manual triggering from the GitHub UI
+
+# Defines the jobs to be executed in the workflow
 jobs:
-  firstJob:
+  # First job, named for clarity in logs and UI
+  DisplayHelloWorld:
+    # Specifies the runner environment
     runs-on: ubuntu-latest
-    steps:
-      - name: before check out
-        run: ls -l
-      - name: check out
-        uses: actions/checkout@v3
-          
-      - name: after check out
-        run: ls -l
+    # - 'ubuntu-latest': Uses the latest Ubuntu version available in GitHub Actions
+    #   Provides a Linux environment for executing commands
 
-        
+    # Lists the steps for this job
+    steps:
+      # Step to print a simple message
+      - name: say hello world
+        # Command executed in the Ubuntu runner's bash shell
+        run: echo "hello world"
+        # - 'echo': Shell command to output text to the console
+        # - Prints "hello world" to the workflow logs
+
+  # Second job, dependent on the first job
+  dependant-job:
+    # Specifies the runner environment for this job
+    runs-on: windows-latest
+    # - 'windows-latest': Uses the latest Windows version available in GitHub Actions
+    #   Provides a Windows environment for executing commands
+
+    # Establishes dependency on the first job
+    needs: DisplayHelloWorld
+    # - 'needs': Specifies that this job depends on the successful completion of 'DisplayHelloWorld'
+    # - If 'DisplayHelloWorld' fails (e.g., if the 'error' step were uncommented and failed),
+    #   this job will not execute
+
+    # Lists the steps for this job
+    steps:
+      # First step in the dependent job
+      - name: echo a string
+        # Command executed in the Windows runner's PowerShell
+        run: Write-Output "Windows String"
+        # - 'Write-Output': PowerShell cmdlet to output text to the console
+        # - Prints "Windows String" to the workflow logs
+
+      # Second step in the dependent job
+      - name: echo a string
+        # Another PowerShell command
+        run: Write-Output "Skip CI"
+        # - Prints "Skip CI" to the workflow logs
+        # - Note: Identical step names ('echo a string') are allowed but may cause confusion in logs
