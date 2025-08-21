@@ -8,7 +8,8 @@ jobs:
       - name: before check out
         run: ls -l
       - name: check out
-        uses: actions/checkout@v3
+        uses: actions\checkout@v3
+          
       - name: after check out
         run: ls -l
 
