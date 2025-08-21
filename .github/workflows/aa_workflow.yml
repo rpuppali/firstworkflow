@@ -9,4 +9,9 @@ jobs:
         run: |
            ls -l
            echo "hello"
+  paralleljob:
+    runs-on: windows-latest
+    steps:
+      - name: name2
+        run: ping 
      
