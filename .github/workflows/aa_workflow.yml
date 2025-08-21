@@ -1,10 +1,11 @@
-name: SayHellotoGitHubActions
+name: HelloToGitHubActions
 on: push
 
-jobs: 
-   firstjob:
+jobs:
+  firstJob:
     runs-on: ubuntu-latest
     steps:
-      - name: SayHello
-        run: echo "Hello GitHub Acions"
-
+      - name: name1
+        run: echo "Hello"
+      
+     
