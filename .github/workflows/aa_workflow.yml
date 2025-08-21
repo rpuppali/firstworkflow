@@ -13,5 +13,4 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: name2
-        run: ping -t
-     
+        run: systeminfo
