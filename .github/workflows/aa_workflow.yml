@@ -5,7 +5,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: list the files before checkout
+      - name: list the files before checkout1
         run: ls -al
       - name: Display commit and ref details
         run: |
