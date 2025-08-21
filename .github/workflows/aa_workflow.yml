@@ -12,7 +12,7 @@ jobs:
 
       - name: name2
         id: greet 
-        uses: actions/hello-world-javascript-action@v.1.1
+        uses: actions/hello-world-javascript-action@v1.1
         with:
           who-to-greet: "Raghav"
         
