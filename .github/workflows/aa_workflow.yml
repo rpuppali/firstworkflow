@@ -5,17 +5,16 @@ jobs:
   firstJob:
     runs-on: ubuntu-latest
     steps:
-      - name: name1
+      - name: files before checkout
         run: |
            ls -l
-           echo "hello"
 
-      - name: name2
-        id: greet 
-        uses: actions/hello-world-javascript-action@v1.1
+      - name: git-checkout 
+        id: checkout 
+        uses: actions/checkout@v3
         with:
           who-to-greet: "Raghav"
 
-      - name: DisplayGreetingTime
-        run: echo "${{steps.greet.outputs.time}}"
+      - name: files after checkout
+        run: ls -l 
         
