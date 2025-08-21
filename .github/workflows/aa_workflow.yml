@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: name1
-        run: echo "Hello"
-      
+        run: |
+           echo ls -l
+           echo "hello"
      
