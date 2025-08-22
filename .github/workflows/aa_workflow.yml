@@ -16,7 +16,7 @@ jobs:
           echo "Hello, World!" > output/hello.txt
           
       - name: Upload build output as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-output
           path: output/hello.txt
